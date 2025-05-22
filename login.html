@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+
+
+  .formsec {
+    width: 80%;
+    height: 500px;
+  }
+
+  </style>
+  <!-- External CSS file  -->
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body style=" background-image: url('Login-bg.png');   background-size: cover;   background-position: center;  background-repeat: no-repeat;">
+  <div style=" background-color: rgba(246, 203, 171, 0.5);" class="formsec">
+    <form id="loginForm"  action="loginsubmit.html" onsubmit="return validateLoginForm()">
+      <div>
+        <div>
+          <input type="email" placeholder="Email address" id="email"  />
+          <p id="email_error"></p>
+        </div>
+        <div>
+          <input type="password" placeholder="Password" id="password" />
+            <p id="password_error"></p>
+        </div>
+        <div style="text-align: right; margin-top: 5px;">
+          <a href="#" style="font-size: 0.9em;color:black">Forgot Password?</a>
+        </div>
+        <br />
+        <button type="submit" style="background-color:#c16306; width: 100%;">Sign In</button>
+        <br /><br />
+        <button type="button" style="background-color:#713d09; color: white; width: 100%; padding: 10px; border: none; cursor: pointer;">
+          Sign in with Google
+        </button>
+        <br /><br />
+        <p  style="font-size: 0.9em;color:black">Don't have an account? <a  style="font-size: 18px;color:rgb(11, 11, 11);font-weight: 600;" href="/index.html">Signup</a></p>
+      </div>
+    </form>
+    <div class="img">
+      <img src="Login-bg.png" alt="" />
+    </div>
+  </div>
+
+  <!--  JS -->
+<script>
+function validateLoginForm() {
+  const email = document.getElementById('email');
+  const password = document.getElementById('password');
+  const email_error = document.getElementById('email_error');
+  const password_error = document.getElementById('password_error');
+
+  const emailExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  let isValid = true;
+
+  // Email validation
+  if (email.value.trim() === '') {
+    email_error.innerHTML = "Please enter your email";
+    email_error.style.color = "black";
+    isValid = false;
+  } else if (!email.value.match(emailExp)) {
+    email_error.innerHTML = "Invalid email format";
+    email_error.style.color = "black";
+    isValid = false;
+  } else {
+    email_error.innerHTML = "";
+  }
+
+  // Password validation
+  if (password.value.trim() === '') {
+    password_error.innerHTML = "Please enter your password";
+    password_error.style.color = "black";
+    isValid = false;
+  } else if (password.value.length < 8) {
+    password_error.innerHTML = "Password should contain at least 8 characters";
+    password_error.style.color = "black";
+    isValid = false;
+  } else {
+    password_error.innerHTML = "";
+  }
+
+  return isValid;
+}
+</script>
+
+
+
+</body>
+</html>

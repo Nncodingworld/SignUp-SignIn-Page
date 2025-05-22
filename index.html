@@ -1,0 +1,38 @@
+<html>
+    <head>
+    <title>
+       Signup Page
+    </title>
+    <!--style.css-->
+    <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="formsec">
+            <form id="form"  action="submit.html " onsubmit="return validateForm(event)">
+              <div>  
+                <div><input type="text"  placeholder="full name" id="fullname">
+                    <p style="color:rgb(46, 247, 6)" id="name_error"></p>
+                </div>
+              <div><input type="email"  placeholder="email Address" id="email">
+                <p style="color:rgb(46, 247, 6)"  id="email_error"></p>
+            </div>
+                <div> <input type="password"  placeholder="password" id="password">
+                    <p style="color:rgb(46, 247, 6)"  id="password_error"></p>
+                </div>
+                <label>
+                 <input type="checkbox" name="terms" required>
+                 I agree to the <a href="/terms" target="_blank">Terms and Conditions</a>
+                 </label><br><br>
+                 <button>
+                    Get Started Now
+                 </button>
+                 <p>Already a member? <a  href="login.html" target="_blank">Singin</a></p>
+                </div>
+            </form>
+            <div class="img">
+                <img src="femalephotographer.png" alt="">
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
